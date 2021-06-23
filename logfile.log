@@ -7,3 +7,18 @@
 2021-01-22 17:02:14,149 INFO  [DefaultTestContextBootstrapper] Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@352ed70d, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@70730db, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5793b87] 
 2021-01-22 17:02:14,149 INFO  [DefaultListableBeanFactory] Replacing scope 'cucumber-glue' from [cucumber.runtime.java.spring.GlueCodeScope@1852a3ff] to [cucumber.runtime.java.spring.GlueCodeScope@512575e9] 
 2021-01-22 17:02:19,430 INFO  [Log] Test called: Testing the purchase of two items has started 
+2021-06-17 11:32:32,018 INFO  [Log] Test called: Testing the authentication has started 
+2021-06-17 11:32:46,919 INFO  [Log] INFO: Navigating to http://automationpractice.com 
+2021-06-17 11:33:21,435 INFO  [GenericApplicationContext] Closing org.springframework.context.support.GenericApplicationContext@5032714f: startup date [Thu Jun 17 11:32:28 CEST 2021]; root of context hierarchy 
+2021-06-17 11:36:43,201 INFO  [Log] Test called: Testing the authentication has started 
+2021-06-17 11:36:56,869 INFO  [Log] INFO: Navigating to http://automationpractice.com 
+2021-06-17 11:37:19,011 INFO  [GenericApplicationContext] Closing org.springframework.context.support.GenericApplicationContext@5032714f: startup date [Thu Jun 17 11:36:40 CEST 2021]; root of context hierarchy 
+2021-06-17 11:56:51,766 INFO  [Log] Test called: Testing the authentication has started 
+2021-06-17 11:56:52,484 INFO  [Log] INFO: Navigating to http://automationpractice.com 
+2021-06-17 11:57:14,483 INFO  [GenericApplicationContext] Closing org.springframework.context.support.GenericApplicationContext@5032714f: startup date [Thu Jun 17 11:56:48 CEST 2021]; root of context hierarchy 
+2021-06-17 11:57:24,557 INFO  [Log] Test called: Testing the authentication has started 
+2021-06-17 11:57:38,714 INFO  [Log] INFO: Navigating to http://automationpractice.com 
+2021-06-17 11:58:57,521 INFO  [GenericApplicationContext] Closing org.springframework.context.support.GenericApplicationContext@5032714f: startup date [Thu Jun 17 11:57:21 CEST 2021]; root of context hierarchy 
+2021-06-23 09:26:55,184 INFO  [Log] Test called: Testing the authentication has started 
+2021-06-23 09:26:58,437 INFO  [Log] INFO: Navigating to http://automationpractice.com 
+2021-06-23 09:27:02,640 INFO  [GenericApplicationContext] Closing org.springframework.context.support.GenericApplicationContext@5032714f: startup date [Wed Jun 23 09:26:52 CEST 2021]; root of context hierarchy 

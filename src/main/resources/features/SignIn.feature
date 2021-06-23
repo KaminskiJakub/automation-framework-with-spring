@@ -11,4 +11,3 @@ Feature: Shopping Automation
     And I proceed to checkout
     And I confirm address, shipping, payment and final order
     Then The elements are bought
-

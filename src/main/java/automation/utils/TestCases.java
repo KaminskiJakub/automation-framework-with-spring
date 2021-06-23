@@ -6,7 +6,7 @@ public enum TestCases {
 
     private String testName;
 
-    TestCases(String value){
+    TestCases(String value) {
         this.testName = value;
     }
 
