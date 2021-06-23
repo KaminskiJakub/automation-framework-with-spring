@@ -35,7 +35,7 @@ public class StepDefinition {
     ConfigurationProperties configurationProperties;
 
     @Before
-    public void initializeObjects(){
+    public void initializeObjects() {
         DriverSingleton.getInstance(configurationProperties.getBrowser());
         homePage = new HomePage();
         signInPage = new SignInPage();
@@ -48,7 +48,7 @@ public class StepDefinition {
     }
 
     @Given("^I go to the Website")
-    public void i_go_to_the_Website(){
+    public void i_go_to_the_Website() {
         driver = DriverSingleton.getDriver();
         driver.get(Constants.URL);
         Log.info("INFO: Navigating to " + Constants.URL);
@@ -56,7 +56,7 @@ public class StepDefinition {
     }
 
     @When("^I click on Sign In button")
-    public void i_click_on_sign_in_button(){
+    public void i_click_on_sign_in_button() {
         homePage.clickSignIn();
         test.log(LogStatus.PASS, "Sign In button has been clicked.");
     }
@@ -69,19 +69,19 @@ public class StepDefinition {
     }
 
     @And("^I specify my credentials and click Login")
-    public void i_specify_my_credentials_and_click_login(){
+    public void i_specify_my_credentials_and_click_login() {
         signInPage.logIn(configurationProperties.getEmail(), configurationProperties.getPassword());
         test.log(LogStatus.PASS, "Login has been clicked.");
     }
 
     @And("^I proceed to checkout")
-    public void i_proceed_to_checkout(){
+    public void i_proceed_to_checkout() {
         checkoutPage.goToCheckout();
         test.log(LogStatus.PASS, "We proceed to checkout");
     }
 
     @And("^I confirm address, shipping, payment and final order")
-    public void i_confirm_address_shipping_payment_and_final_order(){
+    public void i_confirm_address_shipping_payment_and_final_order() {
         signInPage.logIn(configurationProperties.getEmail(), configurationProperties.getPassword());
         checkoutPage.confirmAddress();
         checkoutPage.confirmShipping();
@@ -91,8 +91,8 @@ public class StepDefinition {
     }
 
     @Then("^I can log into the website")
-    public void i_can_log_into_the_website(){
-        if(configurationProperties.getUsername().equals(homePage.getUserName()))
+    public void i_can_log_into_the_website() {
+        if (configurationProperties.getUsername().equals(homePage.getUserName()))
             test.log(LogStatus.PASS, "The authentication is successful.");
         else
             test.log(LogStatus.FAIL, "Authentication is not successful.");
@@ -101,8 +101,8 @@ public class StepDefinition {
     }
 
     @Then("^The elements are bought")
-    public void the_elements_are_bought(){
-        if(checkoutPage.checkFinalStatus())
+    public void the_elements_are_bought() {
+        if (checkoutPage.checkFinalStatus())
             test.log(LogStatus.PASS, "The two items are bought.");
         else
             test.log(LogStatus.FAIL, "The items weren't bought");
@@ -111,7 +111,7 @@ public class StepDefinition {
     }
 
     @After
-    public void closeObjects(){
+    public void closeObjects() {
         report.endTest(test);
         report.flush();
         DriverSingleton.closeObjectInstance();

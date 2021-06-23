@@ -12,12 +12,13 @@ import java.util.Random;
 
 public class Utils {
     public static int testCount = 0;
-    public static String decode64(String encodedStr){
+
+    public static String decode64(String encodedStr) {
         Base64.Decoder decoder = Base64.getDecoder();
         return new String(decoder.decode(encodedStr.getBytes()));
     }
 
-    public static boolean takeScreenshot(){
+    public static boolean takeScreenshot() {
         File file = ((TakesScreenshot) DriverSingleton.getDriver()).getScreenshotAs(OutputType.FILE);
         try {
             FileCopyUtils.copy(file, new File(Constants.SCREENSHOTS_FOLDER + generateRandomString(Constants.SCREENSHOT_NAME_LENGTH) + Constants.SCREENSHOT_EXTENSION));
@@ -27,12 +28,12 @@ public class Utils {
         }
     }
 
-    private static String generateRandomString(int length){
+    private static String generateRandomString(int length) {
         String seedChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         StringBuilder sb = new StringBuilder();
         int i = 0;
         Random random = new Random();
-        while(i < length){
+        while (i < length) {
             sb.append(seedChars.charAt(random.nextInt(seedChars.length())));
             i++;
         }
