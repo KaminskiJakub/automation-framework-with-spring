@@ -1,6 +1,9 @@
 ##############################
 ## Java
 ##############################
+TestReport.html
+logfile.log
+
 .mtj.tmp/
 *.class
 *.jar

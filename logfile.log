@@ -22,3 +22,24 @@
 2021-06-23 09:26:55,184 INFO  [Log] Test called: Testing the authentication has started 
 2021-06-23 09:26:58,437 INFO  [Log] INFO: Navigating to http://automationpractice.com 
 2021-06-23 09:27:02,640 INFO  [GenericApplicationContext] Closing org.springframework.context.support.GenericApplicationContext@5032714f: startup date [Wed Jun 23 09:26:52 CEST 2021]; root of context hierarchy 
+2021-06-30 15:13:26,807 INFO  [Log] Test called: Testing the authentication has started 
+2021-06-30 15:13:33,694 INFO  [Log] INFO: Navigating to http://automationpractice.com 
+2021-06-30 15:55:23,205 INFO  [GenericApplicationContext] Closing org.springframework.context.support.GenericApplicationContext@7d900ecf: startup date [Wed Jun 30 15:13:23 CEST 2021]; root of context hierarchy 
+2021-07-02 13:48:45,200 INFO  [Log] Test called: Testing the authentication has started 
+2021-07-02 13:48:48,864 INFO  [Log] INFO: Navigating to http://automationpractice.com 
+2021-07-02 13:48:54,972 INFO  [GenericApplicationContext] Closing org.springframework.context.support.GenericApplicationContext@5032714f: startup date [Fri Jul 02 13:48:42 CEST 2021]; root of context hierarchy 
+2021-07-02 13:49:03,684 INFO  [Log] Test called: Testing the authentication has started 
+2021-07-02 13:49:07,138 INFO  [Log] INFO: Navigating to http://automationpractice.com 
+2021-07-02 13:50:54,455 INFO  [GenericApplicationContext] Closing org.springframework.context.support.GenericApplicationContext@7d900ecf: startup date [Fri Jul 02 13:49:00 CEST 2021]; root of context hierarchy 
+2021-07-02 13:51:01,266 INFO  [Log] Test called: Testing the authentication has started 
+2021-07-02 13:51:04,664 INFO  [Log] INFO: Navigating to http://automationpractice.com 
+2021-07-02 13:51:19,655 INFO  [GenericApplicationContext] Closing org.springframework.context.support.GenericApplicationContext@5032714f: startup date [Fri Jul 02 13:50:58 CEST 2021]; root of context hierarchy 
+2021-07-02 13:51:39,931 INFO  [Log] Test called: Testing the authentication has started 
+2021-07-02 13:51:43,306 INFO  [Log] INFO: Navigating to http://automationpractice.com 
+2021-07-02 13:51:56,748 INFO  [GenericApplicationContext] Closing org.springframework.context.support.GenericApplicationContext@5032714f: startup date [Fri Jul 02 13:51:37 CEST 2021]; root of context hierarchy 
+2021-07-02 13:52:06,660 INFO  [Log] Test called: Testing the authentication has started 
+2021-07-02 13:52:10,703 INFO  [Log] INFO: Navigating to http://automationpractice.com 
+2021-07-02 13:52:28,663 INFO  [GenericApplicationContext] Closing org.springframework.context.support.GenericApplicationContext@5032714f: startup date [Fri Jul 02 13:52:03 CEST 2021]; root of context hierarchy 
+2021-07-02 14:17:00,934 INFO  [Log] Test called: Testing the authentication has started 
+2021-07-02 14:17:04,350 INFO  [Log] INFO: Navigating to http://automationpractice.com 
+2021-07-02 14:17:20,769 INFO  [GenericApplicationContext] Closing org.springframework.context.support.GenericApplicationContext@5032714f: startup date [Fri Jul 02 14:16:58 CEST 2021]; root of context hierarchy 

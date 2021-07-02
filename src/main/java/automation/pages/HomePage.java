@@ -20,10 +20,10 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(css = "#homefeatured > li.ajax_block_product.col-xs-12.col-sm-4.col-md-3.first-in-line.first-item-of-tablet-line.first-item-of-mobile-line > div > div.right-block > div.button-container > a.button.ajax_add_to_cart_button.btn.btn-default")
+    @FindBy(xpath = "//a[@title='Add to cart' and @data-id-product='1']")
     private WebElement addToCartFirst;
 
-    @FindBy(css = "#homefeatured > li.ajax_block_product.col-xs-12.col-sm-4.col-md-3.last-item-of-mobile-line.hovered > div > div.right-block > div.button-container > a.button.ajax_add_to_cart_button.btn.btn-default")
+    @FindBy(xpath = "//a[@title='Add to cart' and @data-id-product='2']")
     private WebElement addToCartSecond;
 
     @FindBy(css = "#header > div:nth-child(3) > div > div > div:nth-child(3) > div > a")
@@ -35,13 +35,13 @@ public class HomePage {
     @FindBy(css = "#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > span > span")
     private WebElement continueShoppingButton;
 
-    @FindBy(css = "#homefeatured > li.ajax_block_product.col-xs-12.col-sm-4.col-md-3.first-in-line.first-item-of-tablet-line.first-item-of-mobile-line")
+    @FindBy(xpath = "//li[contains(@class,'first-in-line first-item-of-tablet-line')]")
     private WebElement firstElement;
 
-    @FindBy(css = "#homefeatured > li:nth-child(2)")
+    @FindBy(xpath = "//li[contains(@class,'col-xs-12 col-sm-4 col-md-3 last-item-of-mobile-line')]")
     private WebElement secondElement;
 
-    @FindBy(css = "#header > div.nav > div > div > nav > div.header_user_info > a")
+    @FindBy(linkText = "Sign in")
     private WebElement signInButton;
 
     @FindBy(css = "#header > div.nav > div > div > nav > div:nth-child(1) > a > span")
@@ -50,7 +50,7 @@ public class HomePage {
     @FindBy(id = "search_query_top")
     private WebElement searchBar;
 
-    @FindBy(css = "#searchbox > button")
+    @FindBy(name = "submit_search")
     private WebElement searchButton;
 
     @FindBy(css = "#center_column > ul > li > div > div.left-block > div > a.product_img_link > img")
