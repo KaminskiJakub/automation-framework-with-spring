@@ -26,13 +26,13 @@ public class HomePage {
     @FindBy(xpath = "//a[@title='Add to cart' and @data-id-product='2']")
     private WebElement addToCartSecond;
 
-    @FindBy(css = "#header > div:nth-child(3) > div > div > div:nth-child(3) > div > a")
+    @FindBy(xpath = "//a[@title='View my shopping cart']")
     private WebElement cart;
 
-    @FindBy(css = "#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > a")
+    @FindBy(xpath = "//a[@title='Proceed to checkout']")
     private WebElement proceedToCheckoutButton;
 
-    @FindBy(css = "#layer_cart > div.clearfix > div.layer_cart_cart.col-xs-12.col-md-6 > div.button-container > span > span")
+    @FindBy(className = "continue btn btn-default button exclusive-medium")
     private WebElement continueShoppingButton;
 
     @FindBy(xpath = "//li[contains(@class,'first-in-line first-item-of-tablet-line')]")
