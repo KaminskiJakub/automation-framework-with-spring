@@ -11,10 +11,17 @@ import automation.utils.Constants;
 
 public class CheckoutPage {
     private WebDriver driver;
+    private WebDriverWait wait;
 
     public CheckoutPage(){
         driver = DriverSingleton.getDriver();
         PageFactory.initElements(driver, this);
+    }
+
+    public WebElement waitUntilElementIsClickable(WebElement webElement) {
+        wait = new WebDriverWait(driver, Constants.TIMEOUT);
+        wait.until(ExpectedConditions.elementToBeClickable(webElement));
+        return webElement;
     }
 
     @FindBy(css = "head > title")
@@ -49,39 +56,33 @@ public class CheckoutPage {
     }
 
     public void goToCheckout(){
-        WebDriverWait wait = new WebDriverWait(driver, Constants.TIMEOUT);
-        wait.until(ExpectedConditions.elementToBeClickable(checkoutButtonSummary));
+        waitUntilElementIsClickable(checkoutButtonSummary);
         checkoutButtonSummary.click();
     }
 
     public void confirmAddress(){
-        WebDriverWait wait = new WebDriverWait(driver, Constants.TIMEOUT);
-        wait.until(ExpectedConditions.elementToBeClickable(checkoutButtonConfirmAddress));
+        waitUntilElementIsClickable(checkoutButtonConfirmAddress);
         checkoutButtonConfirmAddress.click();
     }
 
     public void confirmShipping(){
-        WebDriverWait wait = new WebDriverWait(driver, Constants.TIMEOUT);
-        wait.until(ExpectedConditions.elementToBeClickable(checkoutButtonConfirmShipping));
+        waitUntilElementIsClickable(checkoutButtonConfirmShipping);
         confirmShippingCheckBox.click();
         checkoutButtonConfirmShipping.click();
     }
 
     public void payByBankWire(){
-        WebDriverWait wait = new WebDriverWait(driver, Constants.TIMEOUT);
-        wait.until(ExpectedConditions.elementToBeClickable(payByBankWireOption));
+        waitUntilElementIsClickable(payByBankWireOption);
         payByBankWireOption.click();
     }
 
     public void confirmFinalOrder(){
-        WebDriverWait wait = new WebDriverWait(driver, Constants.TIMEOUT);
-        wait.until(ExpectedConditions.elementToBeClickable(confirmOrder));
+        waitUntilElementIsClickable(confirmOrder);
         confirmOrder.click();
     }
 
     public Boolean checkFinalStatus(){
-        WebDriverWait wait = new WebDriverWait(driver, Constants.TIMEOUT);
-        wait.until(ExpectedConditions.elementToBeClickable(orderConfirmationMessage));
+        waitUntilElementIsClickable(orderConfirmationMessage);
         return orderConfirmationMessage.getText().contains(Constants.COMPLETE_ORDER);
     }
 
