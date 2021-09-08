@@ -10,7 +10,6 @@ public class PhantomJs implements DriverStrategy {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setJavascriptEnabled(true);
         WebDriver driver = new PhantomJSDriver(desiredCapabilities);
-
         return driver;
     }
 }

@@ -14,10 +14,18 @@ import automation.utils.Utils;
 
 public class HomePage {
     private WebDriver driver;
+    private WebDriverWait wait;
+    private Actions hover;
 
     public HomePage() {
         driver = DriverSingleton.getDriver();
         PageFactory.initElements(driver, this);
+    }
+
+    public WebElement waitUntilElementIsClickable(WebElement webElement) {
+        wait = new WebDriverWait(driver, Constants.TIMEOUT);
+        wait.until(ExpectedConditions.elementToBeClickable(webElement));
+        return webElement;
     }
 
     @FindBy(xpath = "//a[@title='Add to cart' and @data-id-product='1']")
@@ -32,7 +40,7 @@ public class HomePage {
     @FindBy(xpath = "//a[@title='Proceed to checkout']")
     private WebElement proceedToCheckoutButton;
 
-    @FindBy(className = "continue btn btn-default button exclusive-medium")
+    @FindBy(xpath = "//span[@title='Continue shopping']")
     private WebElement continueShoppingButton;
 
     @FindBy(xpath = "//li[contains(@class,'first-in-line first-item-of-tablet-line')]")
@@ -44,7 +52,7 @@ public class HomePage {
     @FindBy(linkText = "Sign in")
     private WebElement signInButton;
 
-    @FindBy(css = "#header > div.nav > div > div > nav > div:nth-child(1) > a > span")
+    @FindBy(xpath = "//a[@class='account']//span")
     private WebElement username;
 
     @FindBy(id = "search_query_top")
@@ -70,8 +78,7 @@ public class HomePage {
     }
 
     public void clickSignIn() {
-        WebDriverWait wait = new WebDriverWait(driver, Constants.TIMEOUT);
-        wait.until(ExpectedConditions.elementToBeClickable(signInButton));
+        waitUntilElementIsClickable(signInButton);
         signInButton.click();
     }
 
@@ -80,11 +87,10 @@ public class HomePage {
     }
 
     public void addFirstElementToCart() {
-        Actions hover = new Actions(driver);
+        hover = new Actions(driver);
         hover.moveToElement(firstElement).build().perform();
         addToCartFirst.click();
-        WebDriverWait wait = new WebDriverWait(driver, Constants.TIMEOUT);
-        wait.until(ExpectedConditions.elementToBeClickable(continueShoppingButton));
+        waitUntilElementIsClickable(continueShoppingButton);
         continueShoppingButton.click();
         if (cart.getText().contains(Constants.CART_QUANTITY))
             System.out.println("Cart has been updated");
@@ -92,15 +98,13 @@ public class HomePage {
             System.out.println("Cart has not been updated");
             Utils.takeScreenshot();
         }
-
     }
 
     public void addSecondElementToCart() {
         Actions hover = new Actions(driver);
         hover.moveToElement(secondElement).build().perform();
         addToCartSecond.click();
-        WebDriverWait wait = new WebDriverWait(driver, Constants.TIMEOUT);
-        wait.until(ExpectedConditions.elementToBeClickable(proceedToCheckoutButton));
+        waitUntilElementIsClickable(proceedToCheckoutButton);
         proceedToCheckoutButton.click();
     }
 }
