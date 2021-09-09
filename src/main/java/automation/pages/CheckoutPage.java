@@ -27,7 +27,7 @@ public class CheckoutPage {
     @FindBy(css = "head > title")
     private WebElement pageTitle;
 
-    @FindBy(css = "#center_column > p.cart_navigation.clearfix > a.button.btn.btn-default.standard-checkout.button-medium > span")
+    @FindBy(xpath = "//a[@class='button btn btn-default standard-checkout button-medium']")
     private WebElement checkoutButtonSummary;
 
     @FindBy(css = "#center_column > form > p > button > span")

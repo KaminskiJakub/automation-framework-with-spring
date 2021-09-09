@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import automation.utils.Constants;
 import automation.utils.Utils;
 
-
 public class HomePage {
     private WebDriver driver;
     private WebDriverWait wait;
@@ -101,7 +100,7 @@ public class HomePage {
     }
 
     public void addSecondElementToCart() {
-        Actions hover = new Actions(driver);
+        hover = new Actions(driver);
         hover.moveToElement(secondElement).build().perform();
         addToCartSecond.click();
         waitUntilElementIsClickable(proceedToCheckoutButton);
