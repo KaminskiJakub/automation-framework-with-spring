@@ -24,36 +24,29 @@ public class CheckoutPage {
         return webElement;
     }
 
-    @FindBy(css = "head > title")
-    private WebElement pageTitle;
-
     @FindBy(xpath = "//a[@class='button btn btn-default standard-checkout button-medium']")
     private WebElement checkoutButtonSummary;
 
-    @FindBy(css = "#center_column > form > p > button > span")
+    @FindBy(css = "button[name='processAddress']")
     private WebElement checkoutButtonConfirmAddress;
 
     @FindBy(id = "cgv")
     private WebElement confirmShippingCheckBox;
 
-    @FindBy(css = "#form > p > button > span")
+    @FindBy(css = "button[name='processCarrier']")
     private WebElement checkoutButtonConfirmShipping;
 
-    @FindBy(css = "#HOOK_PAYMENT > div:nth-child(1) > div > p > a")
+    @FindBy(css = "a.bankwire")
     private WebElement payByBankWireOption;
 
-    @FindBy(css = "#cart_navigation > button > span")
+    @FindBy(css = "button[class='button btn btn-default button-medium']")
     private WebElement confirmOrder;
 
-    @FindBy(css = "#center_column > div > p > strong")
+    @FindBy(css = "p.cheque-indent")
     private WebElement orderConfirmationMessage;
 
     @FindBy(id = "summary_products_quantity")
     private WebElement summaryProducts;
-
-    public Boolean checkTitle(String title){
-        return pageTitle.getText().equals(title);
-    }
 
     public void goToCheckout(){
         waitUntilElementIsClickable(checkoutButtonSummary);
