@@ -4,8 +4,6 @@ import automation.drivers.strategies.DriverStrategy;
 import automation.drivers.strategies.DriverStrategyImplementer;
 import org.openqa.selenium.WebDriver;
 
-import java.util.concurrent.TimeUnit;
-
 public class DriverSingleton {
     private static DriverSingleton instance = null;
     private static WebDriver driver;

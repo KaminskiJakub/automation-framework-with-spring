@@ -1,16 +1,16 @@
 package automation.pages;
 
 import automation.drivers.DriverSingleton;
+import automation.utils.Utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import automation.utils.Utils;
 
 public class SignInPage {
     private WebDriver driver;
 
-    public SignInPage(){
+    public SignInPage() {
         this.driver = DriverSingleton.getDriver();
         PageFactory.initElements(driver, this);
     }
@@ -30,13 +30,13 @@ public class SignInPage {
     @FindBy(id = "SubmitCreate")
     private WebElement signUpButton;
 
-    public void logIn(String email, String passwd){
+    public void logIn(String email, String passwd) {
         emailField.sendKeys(email);
         password.sendKeys(Utils.decode64(passwd));
         signInButton.click();
     }
 
-    public void signUp(String email){
+    public void signUp(String email) {
         emailSignUpField.sendKeys(email);
         signUpButton.click();
     }

@@ -1,6 +1,8 @@
 package automation.pages;
 
 import automation.drivers.DriverSingleton;
+import automation.utils.Constants;
+import automation.utils.Utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -8,8 +10,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import automation.utils.Constants;
-import automation.utils.Utils;
 
 public class HomePage {
     private WebDriver driver;
@@ -63,11 +63,11 @@ public class HomePage {
     @FindBy(css = "#center_column > ul > li > div > div.left-block > div > a.product_img_link > img")
     private WebElement searchResults;
 
-    public Boolean searchElement(String searchStr){
+    public Boolean searchElement(String searchStr) {
         searchBar.sendKeys(searchStr);
         searchButton.click();
         try {
-            if(searchResults.isEnabled())
+            if (searchResults.isEnabled())
                 return true;
         } catch (Exception e) {
             return false;
