@@ -7,6 +7,7 @@ This project shows how spring can be used in automation testing framework.
 * [Features](#features)
 * [Additional information](#additional-information)  
 * [Spring extended description](#spring-extended-description)
+* [BDD extended description](#bdd-extended-description)
 * [Room for Improvement](#room-for-improvement)
 
 ## General Information
@@ -23,7 +24,7 @@ This project shows how spring can be used in automation testing framework.
   - Singleton Pattern is used in connection to Web Driver. I want a single instance of a driver to be reachable from any place from a code. 
    
 ## Features
-- TODO
+- There are 2 basic BDD scenarios in `features` package : SignIn and Checkout. 
 
 ## Additional information
 - To avoid hardcoding, values which won’t change and are needed through entire framework are in ‘Constants’ class.
@@ -42,6 +43,13 @@ This project shows how spring can be used in automation testing framework.
   Control of an object is inverted to a more professional dedicated framework, that handles that object and responsibility of the object on our behalf.
   In class `ConfigurationProperties` in `utils` package there is added annotation `@Component` - a spring bean, so it’s a part of inversion of control. Also there are annotations `@Value` which define a variable. Additional annotation `@PropertySource` points to file `framework.properties` where are pairs key-value placed.
     - There is also a basic class `AutomationFrameworkConfiguration` in package `confi`’, which scans framework for components. There is annotation `@Configuration` and annotation `@ComponentScan` where we specify a package where do we want to perform component scan in a search for `@Components` annotations.
+
+
+## BDD extended description
+
+- Similarly to Spring description, I added more detailed explanation about BDD in this section.
+
+  -  TODO
 
 ## Room for Improvement
 - As mentioned above, the idea of this project was to put focus on spring functionalities, so there are only basic features created.
