@@ -8,6 +8,9 @@ This project shows how spring can be used in automation testing framework.
 * [Additional information](#additional-information)  
 * [Spring extended description](#spring-extended-description)
 * [BDD extended description](#bdd-extended-description)
+* [Running BDD scenarios](#running-bdd-scenarios)  
+* [Reporting capabilities](#reporting-capabilities)
+* [Logging capabilities](#logging-capabilities)  
 * [Room for Improvement](#room-for-improvement)
 
 ## General Information
@@ -49,9 +52,31 @@ This project shows how spring can be used in automation testing framework.
 
 - Similarly to Spring description, I added more detailed explanation about BDD in this section.
 
-  -  TODO
+  - Tests are defined as user stories in `features` package. They are written first, and then they are developed further. It is implemented through cucumber library.
+  - In `StepDefinition` there is annotation `@ContextConfiguration(classes = AutomationFrameworkConfiguration.class)` which connects Spring and Cucumber. Class provided in brackets will scan framework for @Component annotation, so it includes variables, and they can be injected in runtime in step definition.    
+    There is also `@Autowired` annotation which points to `Configuration properties` class in import, and there is an important `initializeObjects()` method. 
+
+## Running BDD scenarios
+
+- `RunTests` class in `automation/glue` package is responsible for running tests.
+  Annotation `RunWith` specifies with what library those tests run `@RunWith(Cucumber.class)`. There are also two options : first one `plugin` is for creating a report and second one `features` is to link to feature files.
+- Running class `RunTests` will run feature files specified in feature="..." option. 
+   
+
+## Reporting capabilities
+- Reporting is done after every run of automation suit with the usage of Extent Reports. Test cases are stored in Enum `TestCases` and increment through it whenever test is started.
+- In `StepDefinition` class there is: 
+    - `ExtentTest` object which logs actions in report.
+    - Object `ExtentReport` which is responsible for creating reports and when it is instantiated, then the path will be created automatically. 
+    - Defining start of a test case is in `initializeObject()` method under @Before annotation. There is an array of Enums (test case names), and a counter from `Utils` class because we instantiate through this array (counter is incremented every time a test is executed).
+    - A method `closeObjects()` under @After annotation states the end of report with `report.endTest()` and `report.flush()` - saving report to disc.
+- In steps `test.log()` is added.
+
+## Logging capabilities
+
 
 ## Room for Improvement
 - As mentioned above, the idea of this project was to put focus on spring functionalities, so there are only basic features created.
   However, it is still developed. README file will be improved and implementation itself will also grow.
+  For example there can be date and time added in reporting feature, so time of test executions is known.  
   
